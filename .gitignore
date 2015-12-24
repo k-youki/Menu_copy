@@ -45,3 +45,13 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.meta
+Library
+Temp
+*.userprefs
+*.sln
+Assets/2D
+Assets/AssetBundleResources
+Assets/CreativeSource
+Assets/Resources
+スクリーンショット
