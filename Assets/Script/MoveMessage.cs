@@ -14,17 +14,19 @@ public class MoveMessage : MonoBehaviour {
 
 	public void init_txt( ) {
 		this.GetComponent<Text>().text = scroll_txt;
-		transform.localPosition = new Vector3(315f, 65.1f, 0f);
+		GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -45f, 0f); 
+		//transform.position = new Vector3(315f, 154f, 0f);
 		ScrollHandler();
 	}
 
 	private void InstHandler(  ) {
-		transform.localPosition = new Vector3(1106, 65.1f, 0f);
+		GetComponent<RectTransform>().anchoredPosition = new Vector3(900, -45f, 0f); 
+		//transform.localPosition = new Vector3(1100, 65.1f, 0f);
 		DashHandler();
 	}
 
 	private void DashHandler(  ) {
-		iTween.MoveTo(gameObject, iTween.Hash("x", 315,  "delay", 3, "speed", 1000f, "easetype", iTween.EaseType.linear, "islocal", true, "oncomplete", "ScrollHandler"));
+		iTween.MoveTo(gameObject, iTween.Hash("x", -400,  "delay", 3, "speed", 1000f, "easetype", iTween.EaseType.linear, "islocal", true, "oncomplete", "ScrollHandler"));
 	}
 
 	private void ScrollHandler(  ) {

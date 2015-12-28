@@ -25,7 +25,7 @@ public class FriendButton : MonoBehaviour {
 		//anim_panel.GetComponent<Animator>().SetTrigger("In");
 		title_bord.GetComponent<Animator>().SetTrigger("In");
 		iTween.Stop();
-		moveMessage.scroll_txt = "フレンドページです。";
+		moveMessage.scroll_txt = "あなたのフレンドのリストです。　フレンド解除ボタンを押すと、フレンドを解除する事ができます。";
 		moveMessage.last_x = last_x;
 		moveMessage.init_txt();
 	}

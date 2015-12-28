@@ -18,6 +18,7 @@ public class FriendPanelControllr : MonoBehaviour
 	public GameObject serch_plate;
 
 	public GameObject tab_cursor;
+	public MoveMessage moveMessage;
 
 	void Start()
 	{
@@ -41,18 +42,30 @@ public class FriendPanelControllr : MonoBehaviour
 			list_plate.transform.FindChild("view").gameObject.SetActive( true );
 			list_plate.transform.FindChild("ON_plate").gameObject.SetActive( true );
 			active_plate = list_plate;
+			iTween.Stop();
+			moveMessage.scroll_txt = "あなたのフレンドのリストです。　フレンド解除ボタンを押すと、フレンドを解除する事ができます。";
+			moveMessage.last_x = -2000;
+			moveMessage.init_txt();
 			iTween.MoveTo(tab_cursor, iTween.Hash("x", -250, "speed", 1000f, "easetype", iTween.EaseType.linear, "islocal", true));
 		} else if ( trans_waitok_flag ) {
 			//承認待ちタブへの遷移
 			waitok_plate.transform.FindChild("view").gameObject.SetActive( true );
 			waitok_plate.transform.FindChild("ON_plate").gameObject.SetActive( true );
 			active_plate = waitok_plate;
+			iTween.Stop();
+			moveMessage.scroll_txt = "あなたにフレンド申請を行ったプレイヤーのリストです。　相手プレイヤーのフレンドリストが一杯の場合は承認ができません。";
+			moveMessage.last_x = -2000;
+			moveMessage.init_txt();
 			iTween.MoveTo(tab_cursor, iTween.Hash("x", 0, "speed", 1000f, "easetype", iTween.EaseType.linear, "islocal", true));
 		} else if (  trans_serch_flag ) {
 			//検索タブへの遷移
 			serch_plate.transform.FindChild("view").gameObject.SetActive( true );
 			serch_plate.transform.FindChild("ON_plate").gameObject.SetActive( true );
 			active_plate = serch_plate;
+			iTween.Stop();
+			moveMessage.scroll_txt = "プレイヤーを検索し、フレンド申請をすることができます。　友達のプレイヤーIDを聞いて、フレンド申請をしましょう。";
+			moveMessage.last_x = -2000;
+			moveMessage.init_txt();
 			iTween.MoveTo(tab_cursor, iTween.Hash("x", 250, "speed", 1000f, "easetype", iTween.EaseType.linear, "islocal", true));
 		}
 
